@@ -1,6 +1,5 @@
 const db = require("../config/db");
 
-// CREATE ORDER
 exports.createOrder = async ({ product_name, amount, user_id }) => {
   const result = await db.query(
     `INSERT INTO orders (product_name, amount, user_id, status)
@@ -12,7 +11,6 @@ exports.createOrder = async ({ product_name, amount, user_id }) => {
   return result.rows[0];
 };
 
-// GET ALL ORDERS (🔥 YOU MISSED THIS)
 exports.getOrders = async () => {
   const result = await db.query(`
     SELECT o.id, o.product_name, o.amount, o.status, u.name AS user_name
@@ -23,7 +21,6 @@ exports.getOrders = async () => {
   return result.rows;
 };
 
-// UPDATE STATUS
 const validFlow = {
   Placed: "Packed",
   Packed: "Shipped",

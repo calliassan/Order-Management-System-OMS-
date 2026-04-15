@@ -1,6 +1,5 @@
 const orderService = require("../services/orderService");
 
-// CREATE ORDER
 exports.createOrder = async (req, res) => {
   try {
     const data = await orderService.createOrder(req.body);
@@ -10,7 +9,6 @@ exports.createOrder = async (req, res) => {
   }
 };
 
-// GET ALL ORDERS
 exports.getOrders = async (req, res) => {
   try {
     const data = await orderService.getOrders();
@@ -20,7 +18,6 @@ exports.getOrders = async (req, res) => {
   }
 };
 
-// UPDATE STATUS
 exports.updateStatus = async (req, res) => {
   try {
     const data = await orderService.updateStatus(
